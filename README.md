@@ -2,6 +2,10 @@
 
 技求祭紅組 サーバーサイド(Ruby on Rails)
 
+参加者
+Tatty
+kyohei
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
