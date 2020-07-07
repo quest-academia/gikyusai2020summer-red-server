@@ -2,6 +2,8 @@
 
 技求祭紅組 サーバーサイド(Ruby on Rails)
 
+WasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoiWasshoi
+
 参加者
 Tatty
 kyohei
