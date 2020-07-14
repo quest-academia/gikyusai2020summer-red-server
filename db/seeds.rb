@@ -1,6 +1,3 @@
-
-# coding: utf-8
-
 quest1 = Quest.create!(
   title: "自宅で出来るうまい焼肉",
   award: 1)

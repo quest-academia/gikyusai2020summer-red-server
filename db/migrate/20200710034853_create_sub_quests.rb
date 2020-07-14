@@ -4,7 +4,7 @@ class CreateSubQuests < ActiveRecord::Migration[5.2]
       t.string :chapter
       t.string :title, null: false
       t.integer :point
-      t.references :quest, foreign_key: true
+      t.references :quest, null: false, foreign_key: true
       t.text :content
       t.string :image
       t.timestamps
