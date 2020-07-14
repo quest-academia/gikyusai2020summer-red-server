@@ -19,7 +19,6 @@ quest1.sub_quests.create!(
      ]
    )
 
-
 quest2 = Quest.create!(
   title: "寝ながら痩せるダイエット",
   award: 1)
@@ -40,7 +39,6 @@ quest2.sub_quests.create!(
         image: File.open("#{Rails.root}/db/fixtures/2.jpg")}
      ]
    )
-
 
 quest3 = Quest.create!(
   title: "ミニ屋台の出し方",
