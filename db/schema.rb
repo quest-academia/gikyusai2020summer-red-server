@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_10_034853) do
+ActiveRecord::Schema.define(version: 2020_07_19_073124) do
 
   create_table "quests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.string "award"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_quests_on_user_id"
   end
 
   create_table "sub_quests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -31,5 +33,22 @@ ActiveRecord::Schema.define(version: 2020_07_10_034853) do
     t.index ["quest_id"], name: "index_sub_quests_on_quest_id"
   end
 
+  create_table "user_sub_quests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "subquest_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "password", null: false
+    t.string "name", null: false
+    t.string "email", null: false
+    t.integer "delete_flug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "quests", "users"
   add_foreign_key "sub_quests", "quests"
 end
