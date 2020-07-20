@@ -76,7 +76,7 @@ quest3.sub_quests.create!(
      ]
    )
 
- UserQuest.create!(
+UserQuest.create!(
     [
       {
       user_id: 1,
@@ -90,9 +90,9 @@ UserSubQuest.create!(
     [
       {
       user_id: 1,
-      subquest_id: 5},
+      sub_quest_id: 5},
       {
       user_id: 2,
-      subquest_id: 1}
+      sub_quest_id: 1}
     ]
   )

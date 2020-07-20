@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_19_073124) do
+ActiveRecord::Schema.define(version: 2020_07_20_011254) do
 
   create_table "quests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -33,11 +33,22 @@ ActiveRecord::Schema.define(version: 2020_07_19_073124) do
     t.index ["quest_id"], name: "index_sub_quests_on_quest_id"
   end
 
-  create_table "user_sub_quests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "subquest_id"
+  create_table "user_quests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "quest_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["quest_id"], name: "index_user_quests_on_quest_id"
+    t.index ["user_id"], name: "index_user_quests_on_user_id"
+  end
+
+  create_table "user_sub_quests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "sub_quest_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sub_quest_id"], name: "index_user_sub_quests_on_sub_quest_id"
+    t.index ["user_id"], name: "index_user_sub_quests_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -51,4 +62,8 @@ ActiveRecord::Schema.define(version: 2020_07_19_073124) do
 
   add_foreign_key "quests", "users"
   add_foreign_key "sub_quests", "quests"
+  add_foreign_key "user_quests", "quests"
+  add_foreign_key "user_quests", "users"
+  add_foreign_key "user_sub_quests", "sub_quests"
+  add_foreign_key "user_sub_quests", "users"
 end
