@@ -22,13 +22,13 @@ quest1.sub_quests.create!(
        title: "焼肉のひっくり返し方",
        point: 1,
        content: "hogeしてhogeしたらhogeになる",
-       image: File.open("#{Rails.root}/db/fixtures/1.jpg")},
+       image: "hoge.jpg"},
       {
        chapter: "chapter2",
        title: "うまいタレの作り方",
        point: 1,
        content: "hogeしてhogeしたらhogeになる",
-       image: File.open("#{Rails.root}/db/fixtures/2.jpg")}
+       image: "hoge.jpg"},
      ]
    )
 
@@ -44,13 +44,13 @@ quest2.sub_quests.create!(
         title: "寝ながらスクワット",
         point: 1,
         content: "hogeしてhogeしたらhogeになる",
-        image: File.open("#{Rails.root}/db/fixtures/1.jpg")},
+        image: "hoge.jpg"},
        {
         chapter: "chapter2",
         title: "寝ながら腹筋",
         point: 1,
         content: "hogeしてhogeしたらhogeになる",
-        image: File.open("#{Rails.root}/db/fixtures/2.jpg")}
+        image: "hoge.jpg"},
      ]
    )
 
@@ -66,13 +66,13 @@ quest3.sub_quests.create!(
        title: "スーパーボールすくい",
        point: 1,
        content: "hogeしてhogeしたらhogeになる",
-       image: File.open("#{Rails.root}/db/fixtures/1.jpg")},
+       image: "hoge.jpg"},
        {
        chapter: "chapter2",
        title: "わたがし屋",
        point: 1,
        content: "hogeしてhogeしたらhogeになる",
-       image: File.open("#{Rails.root}/db/fixtures/2.jpg")}
+       image: "hoge.jpg"},
      ]
    )
 
