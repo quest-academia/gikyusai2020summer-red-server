@@ -1,4 +1,10 @@
 class Api::V1::QuestsController < ApplicationController
+  
+  def index
+    quests = Quest.all
+    render json: { data: quests, success: true }
+  end
+  
   def show
     quest = Quest.find(params[:id])
     render json: { data: quest, success: true }
