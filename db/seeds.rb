@@ -13,6 +13,7 @@ user2 = User.create!(
 quest1 = Quest.create!(
   user: user1,
   title: "自宅で出来るうまい焼肉",
+  image: open("#{Rails.root}/db/fixtures/yakiniku_2.png"),
   award: 1)
 
 quest1.sub_quests.create!(
