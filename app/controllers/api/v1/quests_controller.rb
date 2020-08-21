@@ -22,9 +22,17 @@ class Api::V1::QuestsController < ApplicationController
     render json: { data: quest }
   end
 
+  def create
+    # user = current_user
+    quest = current_user.quests.create!(quest_params)
+    # quest = user.Quest.new(quest_params)
+    # quest.save!
+    render json: { data: quest }  
+  end
+
   private
     def quest_params
-      params.require(:quest).permit(:title, :award)
+      params.require(:quest).permit(:title, :award, :image)
     end
 
 end
