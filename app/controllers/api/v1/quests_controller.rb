@@ -8,7 +8,6 @@ class Api::V1::QuestsController < ApplicationController
   def show
     @quest = Quest.find(params[:id])
     @current_user = current_user
-    # render json: { data: quest, success: true }
     render 'show', formats: 'json', handlers: 'jbuilder'
   end
 
