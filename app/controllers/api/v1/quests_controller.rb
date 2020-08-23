@@ -1,7 +1,13 @@
 class Api::V1::QuestsController < ApplicationController
+
+  def index
+    quests = Quest.all
+    render json: { data: quests, success: true }
+  end
+
   def show
-    quest = Quest.find(params[:id])
-    render json: { data: quest, success: true }
+    @quest = Quest.find(params[:id])
+    render 'show', formats: 'json'
   end
 
   def destroy
@@ -9,5 +15,16 @@ class Api::V1::QuestsController < ApplicationController
     quest.destroy
     render json: { success: true }
   end
+
+  def update
+    quest = Quest.find(params[:id])
+    quest.update(quest_params)
+    render json: { data: quest }
+  end
+
+  private
+    def quest_params
+      params.require(:quest).permit(:title, :award)
+    end
 
 end
