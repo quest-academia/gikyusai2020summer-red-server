@@ -11,7 +11,7 @@ class Api::V1::QuestsController < ApplicationController
   end
 
   def create
-    quest = Quest.create(quest_params)
+    quest = current_user.quests.create(quest_params)
     render json: { data: quest, success: true }
   end
 
