@@ -7,7 +7,7 @@ class Api::V1::QuestsController < ApplicationController
 
   def show
     @quest = Quest.find(params[:id])
-    render 'show', formats: 'json'
+    render "show", formats: "json",handlers: "jbuilder"
   end
 
   def destroy
