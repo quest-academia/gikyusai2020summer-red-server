@@ -11,6 +11,11 @@ class Api::V1::QuestsController < ApplicationController
     render 'show', formats: 'json', handlers: 'jbuilder'
   end
 
+  def create
+    quest = current_user.quests.create(quest_params)
+    render json: { data: quest, success: true }
+  end
+
   def destroy
     quest = Quest.find(params[:id])
     quest.destroy
