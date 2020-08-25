@@ -1,4 +1,4 @@
-json.extract! @quest, :id, :title, :award
+json.extract! @quest, :id, :title, :award, :description
                       # , :clear_rate, :created_at, :updated_at
 json.subquests do
 	json.array!(@quest.sub_quests) do |sq|
