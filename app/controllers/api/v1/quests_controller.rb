@@ -6,7 +6,13 @@ class Api::V1::QuestsController < ApplicationController
   end
 
   def show
-    quest = Quest.find(params[:id])
+    @quest = Quest.find(params[:id])
+    @current_user = current_user
+    render 'show', formats: 'json', handlers: 'jbuilder'
+  end
+
+  def create
+    quest = current_user.quests.create(quest_params)
     render json: { data: quest, success: true }
   end
 
@@ -24,6 +30,6 @@ class Api::V1::QuestsController < ApplicationController
 
   private
     def quest_params
-      params.require(:quest).permit(:title, :award, :image)
+      params.require(:quest).permit(:title, :award, :image ,:description)
     end
 end
