@@ -13,6 +13,7 @@ user2 = User.create!(
 quest1 = Quest.create!(
   user: user1,
   title: "自宅で出来るうまい焼肉",
+  image: open("#{Rails.root}/db/fixtures/yakiniku_2.png"),
   award: 1,
   description: "自宅で手軽においしい焼肉を焼いてみましょう！")
 
@@ -36,6 +37,7 @@ quest1.sub_quests.create!(
 quest2 = Quest.create!(
   user: user1,
   title: "寝ながら痩せるダイエット",
+  image: open("#{Rails.root}/db/fixtures/diet.png"),
   award: 1,
   description: "ぷよぷよお肉に猛烈アタック！")
 
@@ -59,6 +61,7 @@ quest2.sub_quests.create!(
 quest3 = Quest.create!(
   user: user2,
   title: "ミニ屋台の出し方",
+  image: open("#{Rails.root}/db/fixtures/yatai.png"),
   award: 1,
   description: "これでいつでもお祭り開催！")
 

@@ -30,6 +30,6 @@ class Api::V1::QuestsController < ApplicationController
 
   private
     def quest_params
-      params.require(:quest).permit(:title, :award, :description)
+      params.require(:quest).permit(:title, :award, :image ,:description)
     end
 end
