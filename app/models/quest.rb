@@ -4,5 +4,5 @@ class Quest < ApplicationRecord
   validates :title, presence: true
   has_many :user_quests, dependent: :destroy
   has_many :completed_users, through: :user_quests, source: :user
-  mount_uploader :image, ImagesUploader
+  mount_uploader :image, ImageUploader
 end
