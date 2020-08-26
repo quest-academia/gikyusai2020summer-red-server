@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_082536) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.string "image"
     t.text "description"
     t.index ["user_id"], name: "index_quests_on_user_id"
   end

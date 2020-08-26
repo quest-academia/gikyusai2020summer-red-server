@@ -1,5 +1,5 @@
 json.data do
-  json.extract! @quest, :id, :title, :award, :description
+  json.extract! @quest, :id, :title, :award, :image, :description
   json.sub_quest_count @quest.sub_quests.count
   json.clear_rate @current_user.completed_sub_quests.where(quest_id: @quest.id).count.to_f/@quest.sub_quests.count
   json.extract! @quest, :created_at, :updated_at
